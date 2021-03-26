@@ -1,0 +1,23 @@
+#container
+{
+    margin-top: 20px;
+    padding-left: 15px;
+    padding-right: 15px
+
+}
+
+a:link, a:visited, a:hover, a:active
+{
+    color: white;
+}
+
+#nav
+{
+    height: 50px;
+}
+
+#title
+{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 25px;
+}

@@ -1,0 +1,24 @@
+{
+  "name": "Neumann_Generator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "Index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WashierAyken/Neumann_Generator.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/WashierAyken/Neumann_Generator/issues"
+  },
+  "homepage": "https://github.com/WashierAyken/Neumann_Generator#readme",
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.3",
+    "bulma": "^0.9.2"
+  }
+}

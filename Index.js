@@ -8,7 +8,10 @@ Generar un programa en un lenguaje de programación, utilizando el método Von N
 para  generar números aleatorios. muestre a través de un ciclo para una lista de los primeros 50 números aleatorios. */
 
 
-function Neumann(seed) {
+function neumann(seed) {
+
+    if(isNaN(seed)) return;
+
     seed = Math.pow(seed,2)
     let newSeed = seed.toString()
 
@@ -22,25 +25,55 @@ function Neumann(seed) {
     return parseInt(newSeed)
 }
 
-function AgregarLista(pipo) { 
+
+function agregarLista(h, pipo) { 
     const lista = document.getElementById ("esmach")
-    let newNode = document.createElement ("li")
+    let nuevaFila = document.createElement ("tr")
+    let indice = document.createElement("th")
+    let numero = document.createElement ("td")
+
+    let oajaca = document.createTextNode(h)
     let guanajuato = document.createTextNode (pipo)
     
-    newNode.appendChild(guanajuato)
-    newNode.className="list-group-item"
+    indice.appendChild(oajaca)
+    numero.appendChild(guanajuato)
 
-    lista.appendChild(newNode)
+    nuevaFila.appendChild(indice)
+    nuevaFila.appendChild(numero)
+
+    lista.appendChild(nuevaFila)
 }
 
-function GenerarNumero() {
-    let seed = parseInt(document.getElementById ("toto").value)
+
+function revisarEntrada() {
+    let valor = parseInt(document.getElementById("toto").value)
+    return isNaN(valor)? alert("Solo se pueden introducir numeros (no letras ni espacios vacios)") : valor
+}
+
+
+function generarNumero() {
+    let seed = revisarEntrada()
+
+    if (seed.toString().length < 4 || seed.toString().length > 4){
+        alert("Solo se pueden ingresar numeros de cuatro cifras")
+        limpiarCampos()
+        return
+    }
+
     let lista = [seed]
 
     for (let index = 0; index < 49; index++) {
-        lista.push (Neumann(lista[index]))   
+        lista.push (neumann(lista[index]))   
     }
 
-    lista.forEach(mamarre => AgregarLista (mamarre))
+    let h = 1
+    lista.forEach(mamarre => {
+        agregarLista (h, mamarre)
+        h++
+    })
 }
 
+
+function limpiarCampos() {  
+    location.reload()
+}
